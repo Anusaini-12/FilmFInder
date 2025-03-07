@@ -5,8 +5,8 @@
 }
 
 :root{
-    --primary-color:#22254b;
-    --secondary-color: #373b69;
+    --primary-color: #101935;
+    --secondary-color: #2D3047;
 }
 
 body{
@@ -57,7 +57,7 @@ body{
 #cta-button {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: orange;
+    background-color: orangered;
     color: white;
     border: none;
     border-radius: 5px;
@@ -66,13 +66,13 @@ body{
 }
 
 #cta-button:hover {
-    background-color: darkorange;
+    background-color: red;
 }
 
 header{
     padding: 1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: var(--secondary-color);
     align-items: center;
 }
@@ -169,12 +169,13 @@ nav ul li a:hover {
 button {
     padding: 12px 20px;
     margin: 20px;
-    background-color: orangered;
+    box-shadow: 0 0 20px #111;
     color: white;
     border: none;
-    border-radius: 21px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    background-color: orangered;
 }
 
 button:hover{
@@ -261,6 +262,7 @@ main{
     max-height: 100%;
     transform:translateY(101%);
     transition:transform 0.3s ease-in;
+    background: linear-gradient(to top, #243949, #537895);
 }
 
 .movie:hover .overview{
@@ -321,29 +323,27 @@ main{
 
 .know-more{
     background-color: orange;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
     color:white;
     font-size: 16px;
     font-weight: bold;
-    border:0;
+    border:none;
     border-radius: 50px;
     padding: 10px 20px;
     margin-top: 5px;
 }
 
 .overlay {
-     
     height: 100%;
     width: 0;
     position: fixed; 
     z-index: 1; 
     left: 0;
     top: 0;
-    background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0, 0.9); 
     overflow-x: hidden; 
     transition: 0.5s; 
   }
-  
   
   .overlay-content {
     position: relative;
@@ -352,7 +352,6 @@ main{
     text-align: center; 
     margin-top: 30px; 
   }
-  
   
   .overlay a {
     padding: 8px;
@@ -368,7 +367,6 @@ main{
     color: #f1f1f1;
   }
   
-  
   .overlay .closebtn {
     position: absolute;
     top: 20px;
@@ -376,7 +374,6 @@ main{
     font-size: 60px;
   }
   
- 
   @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
     .overlay .closebtn {
@@ -542,4 +539,286 @@ footer a:hover {
     padding: 10px 20px;
     margin-top: 5px;
     cursor: pointer;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid orange;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@media (max-width: 768px) {
+    /* Mobile Styles */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        margin: 10px 0;
+    }
+
+    .movie-banner {
+        height: 300px;
+        font-size: 1.5rem;
+    }
+
+    .movie-info-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-info-container img {
+        margin: 0 0 20px 0;
+    }
+
+    .movie-details-text {
+        margin-left: 0;
+    }
+
+    #trailer-container iframe {
+        height: 200px;
+    }
+
+    .cast-grid {
+        gap: 10px;
+    }
+
+    .cast-card {
+        width: 100px;
+    }
+
+    .cast-card img {
+        height: 120px;
+    }
+
+    .movie {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page {
+        padding: 10px;
+    }
+
+    .current {
+        padding: 5px 10px;
+    }
+
+    .overlay-content {
+        top: 5%;
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet Styles */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
+    .movie-banner {
+        height: 400px;
+        font-size: 1.8rem;
+    }
+
+    .movie-info-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .movie-info-container img {
+        margin-right: 20px;
+    }
+
+    .movie-details-text {
+        margin-left: 20px;
+    }
+
+    #trailer-container iframe {
+        height: 250px;
+    }
+
+    .cast-grid {
+        gap: 15px;
+    }
+
+    .cast-card {
+        width: 110px;
+    }
+
+    .cast-card img {
+        height: 130px;
+    }
+
+    .movie {
+        width: 45%;
+    margin: 1rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Desktop Styles */
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .movie-banner {
+        height: 500px;
+        font-size: 2rem;
+    }
+
+    .movie-info-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .movie-info-container img {
+        margin-right: 20px;
+    }
+
+    .movie-details-text {
+        margin-left: 20px;
+    }
+
+    #trailer-container iframe {
+        height: 315px;
+    }
+
+    .cast-grid {
+        gap: 20px;
+    }
+
+    .cast-card {
+        width: 120px;
+    }
+
+    .cast-card img {
+        height: 150px;
+    }
+
+    .movie {
+        width: 300px;
+        margin: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 768px) {
+    .movie {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .movie {
+        width: 45%;
+        margin: 1rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .movie {
+        width: 300px;
+        margin: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    #trailer-container iframe {
+        height: 200px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #trailer-container iframe {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #trailer-container iframe {
+        height: 315px;
+    }
+}
+@media (max-width: 768px) {
+    .cast-card {
+        width: 100px;
+    }
+
+    .cast-card img {
+        height: 120px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cast-card {
+        width: 110px;
+    }
+
+    .cast-card img {
+        height: 130px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .cast-card {
+        width: 120px;
+    }
+
+    .cast-card img {
+        height: 150px;
+    }
 }
